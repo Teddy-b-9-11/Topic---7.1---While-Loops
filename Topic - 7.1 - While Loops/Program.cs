@@ -1,11 +1,14 @@
-﻿namespace Topic___7._1___While_Loops
+﻿using System;
+
+namespace Topic___7._1___While_Loops
 {
     internal class Program
     {
         static void Main(string[] args)
         {
             Random generator = new Random();
-            int pin = 0, entry = 12345, tries = 0, age, guess, secretNumber, num1, num2, num3,total;
+            string message;
+            int pin = 0, entry = 12345, tries = 0, age, guess, secretNumber, num1, num2, num3, total, count = 0, repeat;
             bool done = false;
             //while (true)
             //    Console.WriteLine("Are we there yet?");
@@ -95,8 +98,26 @@
 
             //}
 
+            Console.WriteLine("Type in a message, and I'll display it 5 times.");
+            Console.Write("Message: ");
+            message = Console.ReadLine();
+            while (count < 5)
+            {
+                Console.WriteLine((count + 1) + ". " + message);
+                count++; 
+            }
 
-
+            count = 0;
+            Console.WriteLine("Type in a message, and I'll display it several times. ");
+            Console.Write("Message: ");
+            message = Console.ReadLine();
+            Console.WriteLine("How many times do you want it displayed?");
+            int.TryParse(Console.ReadLine(), out repeat);
+            while (count < repeat)
+            {
+                Console.WriteLine((count + 1) + ". " + message);
+                count++;
+            }
 
         }
     }
